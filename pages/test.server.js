@@ -1,10 +1,20 @@
 import { Box, Center, Container, Flex, Text } from '@chakra-ui/layout'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useEffect } from 'react'
 import Navbar from '../common/Navbar'
 
 
 export default function Home() {
+
+  useEffect(() => {
+    fetch('https://www.boredapi.com/api/activity')
+    .then(data => {
+      console.log(data)
+    })
+
+    
+  })
   return (
     <>
       <Head>
@@ -13,12 +23,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-      <Navbar></Navbar>
-      <Container m={0} p={0} >
-        <Flex>
+        <Navbar></Navbar>
+        <Container m={0} p={0} >
+          <Flex>
             <Box bg="red" h="100vh" w="20vh" minW="200px"></Box>
-        </Flex>   
-      </Container>
+          </Flex>
+        </Container>
       </main>
     </>
   )

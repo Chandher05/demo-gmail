@@ -24,12 +24,13 @@ export default function Navbar() {
     <Flex
       minH="30px"
       as="header"
-      position="fixed"
+      
       bg="red.300"
       backdropFilter="saturate(180%) blur(5px)"
       w="100%"
       p="2"
       alignItems="center"
+      z-index="100"
     >
       <Button onClick={onOpen} m="2">
         <HamburgerIcon></HamburgerIcon>
@@ -54,17 +55,6 @@ export default function Navbar() {
           <SettingsIcon color="white"></SettingsIcon>
         </InpuRightElement> */}
       </InputGroup>
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
-
-          <DrawerBody></DrawerBody>
-
-          <DrawerFooter></DrawerFooter>
-        </DrawerContent>
-      </Drawer>
     </Flex>
   );
 }
